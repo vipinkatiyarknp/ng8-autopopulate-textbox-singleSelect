@@ -1,0 +1,13 @@
+
+<div style="padding-left:0px;width:50%">
+  <input type="text" class="validate filter-input" (input)="filter($event)" name="single-Select" style="max-width:100%" autocomplete="off" [(ngModel)]="selectedListItem">
+  <div>
+    <div class="suggestions" *ngIf="filteredList.length > 0 && showList">
+      <ul *ngFor="let item of filteredList">
+        <li>
+          <p (click)="selectItem(item)">{{item.name}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
